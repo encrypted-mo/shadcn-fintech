@@ -15,21 +15,24 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://shadcn-fintech.vercel.app"),
-  title: "Shadcn Fintech — Finance Dashboard Template",
-  description: "A premium open-source fintech dashboard built with Next.js, shadcn/ui, and Tailwind CSS. 13 pages, drag-and-drop layout, crypto candlestick charts, and more.",
+  title: {
+    default: "Ice Wealth",
+    template: "%s | Ice Wealth",
+  },
+  description:
+    "Ice Wealth — your money, accounts, cards, transfers, investments, and digital assets in one place.",
+  applicationName: "Ice Wealth",
   openGraph: {
-    title: "Shadcn Fintech — Finance Dashboard Template",
-    description: "A premium open-source fintech dashboard built with Next.js, shadcn/ui, and Tailwind CSS.",
+    title: "Ice Wealth",
+    description:
+      "Manage your money, accounts, cards, transfers, investments, and digital assets with Ice Wealth.",
     type: "website",
-    url: "https://shadcn-fintech.vercel.app",
-    images: [{ url: "/screenshots/shadcn-fintech.png", width: 1200, height: 630 }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: "Shadcn Fintech — Finance Dashboard Template",
-    description: "A premium open-source fintech dashboard built with Next.js, shadcn/ui, and Tailwind CSS.",
-    images: ["/screenshots/shadcn-fintech.png"],
+    card: "summary",
+    title: "Ice Wealth",
+    description:
+      "Your money and financial life, together in one place.",
   },
 };
 
@@ -45,7 +48,12 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
           <TooltipProvider>{children}</TooltipProvider>
         </ThemeProvider>
       </body>
